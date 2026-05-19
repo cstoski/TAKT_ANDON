@@ -1,0 +1,26 @@
+{
+    "template": "Report_Template_33.xlsm",
+    "RANGE": {
+        "events": {
+            "sheet": "Eventos",
+            "column-start": "A",
+            "row-start": 5
+        },
+        "history": {
+            "sheet": "Indicadores",
+            "column-start": "A",
+            "row-start": 3
+        },
+        "pieces": {
+            "sheet": "Producao",
+            "column-start": "A",
+            "row-start": 4
+        }
+    },
+    "DATESTAMP": {
+        "sheet": "Dashboard",
+        "column": "R",
+        "row": 6
+    },
+    "status_code": ["I","","","","","F","","","","","C","","","","","A"]
+}
