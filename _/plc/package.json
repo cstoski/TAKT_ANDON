@@ -1,0 +1,14 @@
+{
+  "name": "perkins-logic-controller",
+  "version": "1.0.0",
+  "description": "",
+  "main": "plc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Batt <chris@olaa.ca>",
+  "license": "ISC",
+  "dependencies": {
+    "nodes7": "^0.3.8"
+  }
+}

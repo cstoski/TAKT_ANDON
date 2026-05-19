@@ -1,0 +1,14 @@
+{
+  "name": "sharkpool",
+  "version": "0.1.0",
+  "description": "A database connection pool manager supporting multiple query-based database types, error handling, retries and efficient resource management.",
+  "main": "sharkpool.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Batt <chris@olaa.ca>",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^1.7.0"
+  }
+}
