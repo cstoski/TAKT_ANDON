@@ -1,0 +1,11 @@
+{
+  "name": "sunk",
+  "version": "0.0.1",
+  "description": "A thin and resilient synchronized event bus with push/pull to ensure exactly-once consumption before messages are sunk.",
+  "main": "sunk.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Batt <chris@olaa.ca>",
+  "license": "MIT"
+}
