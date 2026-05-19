@@ -7,7 +7,7 @@ const path = require('path');
 const fs = require('fs');
 
 const transport = require('./infrastructure/transport/transport3');
-const trylist = require('../trylist/trylist');
+const trylist = require('../_/trylist/trylist');
 const plc = require('./infrastructure/plc');
 
 // PLC modular
@@ -53,7 +53,7 @@ async function init() {
 
   // 1. LOAD SETTINGS
   settings = JSON.parse(
-    fs.readFileSync(path.join(__dirname, 'settings.json'))
+    fs.readFileSync(path.join(__dirname, 'config', 'settings.json'))
   );
 
   // 2. LOAD DATA
@@ -77,6 +77,7 @@ async function init() {
   const plcProcessor = createPlcProcessor({
     settings,
     DATA,
+    TEXT: {},
     users: {},
     trylist,
     logDir: path.join(__dirname, 'logs'),

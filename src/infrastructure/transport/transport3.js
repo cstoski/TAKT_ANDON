@@ -270,7 +270,7 @@ else {
         path = require('path'),
         websocket = require('ws'),
         protocol = require('http'),
-        sunk = new (require('../../../sunk/sunk'))(10 * 1000, 1000),
+        sunk = new (require('../../modules/sunk/sunk'))(10 * 1000, 1000),
         AD = new (require('activedirectory2'))({
 			url: 'ldaps://b8wpbldcp01:636',
 			baseDN: 'ou=Administrators,ou=Users,ou=Administation,dc=brazil,dc=cat,dc=com',

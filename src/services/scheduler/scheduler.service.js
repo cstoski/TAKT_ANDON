@@ -1,6 +1,6 @@
 'use strict';
 
-const createTimeoutsManager = require('./timeouts.manager');
+const createTimeoutsManager = require('./startPLCDay/timeouts.manager');
 const createTimelineScheduler = require('./timeline.scheduler');
 const createTimelineBuilder = require('./timeline.builder');
 const createShiftRulesRepository = require('./shiftRules.repository');
@@ -78,7 +78,16 @@ module.exports = function createScheduler(ctx) {
 
   // Managers
   const timeouts = createTimeoutsManager();
-  const timeline = createTimelineScheduler({ timeouts, logger: console, one_minute_ms });
+  const timeline = createTimelineScheduler({
+    timeouts,
+    logger: console,
+    one_day_ms,
+    one_hour_ms,
+    one_minute_ms,
+    hour_minute,
+    sort_by_start,
+    SHIFTS,
+  });
   const builder = createTimelineBuilder({
     one_day_ms, one_hour_ms, one_minute_ms,
     hour_minute, sort_by_start, SHIFTS

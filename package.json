@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "abstract-logging": "^1.0.0",
+    "activedirectory2": "^2.2.0",
     "ajv": "^6.11.0",
     "asn1": "^0.2.4",
     "assert-plus": "^1.0.0",
@@ -117,7 +118,6 @@
     "xmldom": "^0.2.1",
     "xpath.js": "^1.1.0"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
