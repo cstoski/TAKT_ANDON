@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/icons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" id="favicon16" sizes="16x16" href="images/icons/favicon-16x16.png">
+        <link rel="icon" type="image/png" id="favicon32" sizes="32x32" href="images/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" id="favicon96" sizes="96x96" href="images/icons/favicon-96x96.png">
+        <link rel="icon" type="image/png" id="favicon192" sizes="192x192"  href="images/icons/android-icon-192x192.png">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="manifest" href="/manifest.json">
+        
+        <link rel="stylesheet" type="text/css" href="TTUI.css">
+
+        <script async src="TTUI.js"></script>
+        <script async src="TEXT-portugese.js"></script>
+        <script async src="TTEvents.js"></script>
+        <script async src="transport3.js"></script>
+        
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 100vw;
+                height: 100vh;
+                color: #222;
+                background-color: #323450;
+                overflow: hidden;
+            }
+            #logo {
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+                background-image: url('images/perkins-logo-large-white.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+                transition: transform 500ms ease-in, opacity 500ms ease-in;
+            }
+            .logo-shrunk {
+                transform: scale(0);
+                opacity: 0;
+            }
+            #fullscreen {
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100vw;
+                height: 100vh;
+                z-index: 10000;
+                cursor: zoom-in;
+            }
+        </style>
+
+        <title>TaktTime [Perkins]</title>
+    </head>
+
+    <body>
+        <div id="logo"></div>
+        <div id="fullscreen"></div>
+        <div id="dashboard-paused"></div>
+        
+        <script>
+            function UI_init (period, timeout) {
+                if (window.TTEvents &&
+                    window.TTUI &&
+                    window.TEXT &&
+                    window.Transport
+                ) {
+                    document.getElementById('logo').classList.add('logo-shrunk')
+                    Transport.settings(5, 60000)
+                    TTUI(location.pathname)
+                }
+                else {
+                    if ((timeout -= period) > 0) setTimeout(UI_init.bind(undefined, period, timeout), period)
+                }
+            }
+            UI_init(10, 5000)
+        </script>
+    </body>
+    
+</html>
