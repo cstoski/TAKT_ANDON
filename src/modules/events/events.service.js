@@ -1,1 +1,0 @@
-EVENT = new sura('perkins-plc-events')
